@@ -1,7 +1,7 @@
 class BooksController < ApplicationController
   
   def index
-    @user = User
+    @user = current_user
     @book = Book.new
     @books = Book.all
   end
@@ -14,6 +14,7 @@ class BooksController < ApplicationController
   end
   
   def show
+    
   end
     
   private
