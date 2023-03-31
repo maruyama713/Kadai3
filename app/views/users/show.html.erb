@@ -11,3 +11,21 @@
       <%= f.text_area :body %>
     <%= f.submit 'Create Book' %>
   <% end %>
+  
+<h1>Books</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Opinion</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @books.each do |book| %>
+        <tr>
+          <td><%= link_to book.title, "/books/#{@books.ids}" %></td>
+          <td><%= book.body %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>

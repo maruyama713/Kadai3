@@ -15,4 +15,11 @@
   <% end %>
   
 <h1>Book detail</h1>
-  
+  <%= form_with model: @book do |f| %>
+    <tr>
+      <td><%= link_to @book.title, "/books/#{@books.ids}" %></td>
+      <td><%= @book.body %></td>
+      <td><%= link_to 'Edit', "/books/#{@book.id}/edit" %></td>
+      <td><%= link_to 'Destroy', book_path(@book.id), method: :delete, "data-confirm" => "Are you sure?" %></td>
+    </tr>
+  <% end %>
