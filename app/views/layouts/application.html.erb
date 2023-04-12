@@ -17,37 +17,35 @@
     <header>
       <nav class="navbar navbar-expand-md bg-dark pb-3 pt-3">
         <div class="container-fluid">
-          <a class="navbar-brand" hreff="#"><%= link_to root_path do %>
-            <span>Bookers</span><% end %>
-          </a>
+          <%= link_to "Bookers", root_path,class: "navbar-brand" %>
             <% if user_signed_in? %>
               <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                  <%= link_to user_path(current_user.id) do %><i class="fa-solid fa-house">Home</i><% end %>
+                  <%= link_to user_path(current_user.id), class: "nav-link text-light" do %><i class="fas fa-home">Home</i><% end %>
                 </li>
                 <li class="nav-item ml-3">
-                  <%= link_to users_path do %><i class="fa-solid fa-user-group">Users</i><% end %>
+                  <%= link_to users_path, class: "nav-link text-light" do %><i class="fas fa-users">Users</i><% end %>
                 </li>
                 <li class="nav-item ml-3">
-                  <%= link_to books_path do %><i class="fa-solid fa-book">Books</i><% end %>
+                  <%= link_to books_path, class: "nav-link text-light" do %><i class="fas fa-book-open">Books</i><% end %>
                 </li>
                 <li class="nav-item ml-3">
-                  <%= link_to destroy_user_session_path, method: :delete do %><i class="fa-solid fa-person-walking">Log out</i><% end %>
+                  <%= link_to destroy_user_session_path, method: :delete, class: "nav-link text-light" do %><i class="fas ">Log out</i><% end %>
                 </li>
               </ul>
             <% else %>
               <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                  <%= link_to root_path do %><i class="fa-solid fa-house">Home</i><% end %>
+                  <%= link_to root_path, class: "nav-link text-light" do %><i class="fas fa-home">Home</i><% end %>
                 </li>
                 <li class="nav-item ml-3">
-                  <%= link_to about_path do %><i class="fa-solid fa-link">About</i><% end %>
+                  <%= link_to about_path, class: "nav-link text-light" do %><i class="fas fa-link">About</i><% end %>
                 </li>
                 <li class="nav-item ml-3">
-                  <%= link_to new_user_registration_path do %><i class="fa-solid fa-user-plus">Sign up</i><% end %>
+                  <%= link_to new_user_registration_path, class: "nav-link text-light" do %><i class="fas fa-user-plus">Sign up</i><% end %>
                 </li>
                 <li class="nav-item ml-3">
-                  <%= link_to new_user_session_path do %><i class="fa-solid fa-arrow-right-to-bracket">Log in</i><% end %>
+                  <%= link_to new_user_session_path, class: "nav-link text-light" do %><i class="fas fa-sign-in-alt">Log in</i><% end %>
                 </li>
               </ul>
             <% end %>
